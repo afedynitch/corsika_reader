@@ -1,6 +1,10 @@
 #include "tests.h"
 // This test compares the result of using the ShowerParticleStream and RawParticleStream classes
 
+#ifndef uint
+#define uint unsigned int
+#endif
+
 namespace
 {
     struct ParticleType

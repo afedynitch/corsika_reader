@@ -3,7 +3,9 @@
 #include <string.h>
 #include <zlib.h>
 #include <bzlib.h>
+#include "stat_compat.h"
 #include <sys/stat.h>
+
 
 struct RawFileStream: FileStream
 {
