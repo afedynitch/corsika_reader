@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from __future__ import print_function
 import sys
 try:
     import icecube
@@ -20,20 +20,20 @@ events = [f.current_shower]
 
 #for shower in f.events():
 for shower in events:
-    print "Primary: %s"% shower.primary
-    print "Energy: %s"% shower.energy
-    print "MuonNumber: %s"% shower.muon_number
-    print "Zenith: %s"% shower.zenith
-    print "Azimuth: %s"% shower.azimuth
-    print "MinRadiusCut: %s"% shower.min_radius_cut
-    print "ShowerNumber: %s"% shower.shower_number
-    print "EMEnergyCutoff: %s"% shower.em_energy_cutoff
-    print "MuonEnergyCutoff: %s"% shower.muon_energy_cutoff
+    print("Primary: %s"% shower.primary)
+    print("Energy: %s"% shower.energy)
+    print("MuonNumber: %s"% shower.muon_number)
+    print("Zenith: %s"% shower.zenith)
+    print("Azimuth: %s"% shower.azimuth)
+    print("MinRadiusCut: %s"% shower.min_radius_cut)
+    print("ShowerNumber: %s"% shower.shower_number)
+    print("EMEnergyCutoff: %s"% shower.em_energy_cutoff)
+    print("MuonEnergyCutoff: %s"% shower.muon_energy_cutoff)
 
     a=0
     for p in shower.particles:
         if a < 6:
-            print p.weight
+            print(p.weight)
         a += 1
 
-    print "%s particles"% a
+    print("%s particles"% a)

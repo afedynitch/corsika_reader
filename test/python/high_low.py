@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from __future__ import print_function
 import unittest
 import numpy
 import sys, os
@@ -55,7 +55,7 @@ class HighLowTest(unittest.TestCase):
         if filename is None: filename = corsika.example_data_dir + '/DAT000011-proton-EHISTORY-MUPROD'
         assert os.path.exists(filename)
 
-        #print 'opening', filename
+        #print('opening', filename)
         f = corsika.ShowerFile(filename)
         f.find_event(1)
         shower = f.current_shower
@@ -112,10 +112,10 @@ class HighLowTest(unittest.TestCase):
         raw_muons = raw_particles[raw_muon_mask*~raw_invalid_mask*~raw_history_mask*~raw_undefined_mask*(raw_particles['level']==1)]
 
         def test(condition, message):
-            if not condition: print 'FAIL:', message
+            if not condition: print('FAIL:', message)
             assert test
         def test_equal(left, right, message):
-            if not left==right: print 'FAIL:', message, ":", left, "!=", right
+            if not left==right: print('FAIL:', message, ":", left, "!=", right)
             assert left == right
 
         test_equal(len(raw_particles), 294645, "total number of raw particles")

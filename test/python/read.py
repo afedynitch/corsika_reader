@@ -53,7 +53,7 @@ filename = None
 
 class ReadTest(unittest.TestCase):
     def test(self):
-        print sys.argv
+        print(sys.argv)
         global filename
         if filename is None: filename = corsika.example_data_dir + '/DAT000002-32'
         assert os.path.exists(filename)

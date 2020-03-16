@@ -76,6 +76,8 @@ void register_RawIterator(std::string name)
     //      return_internal_reference<>())
     .def("next", next_particle_2<Thinning>,
          return_internal_reference<>())
+    .def("__next__", next_particle_2<Thinning>,
+         return_internal_reference<>())
     .def("__iter__", identity)
     // .def("rewind", &RawParticleIterator::Rewind)
     .def("rewind", Rewind<Thinning>)

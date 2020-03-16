@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from __future__ import print_function
 import sys
 sys.path.append('')
 try:
@@ -23,13 +23,13 @@ block = corsika.Block()
 
 
 raw.get_next_block(block)
-print block.ID, 'at', raw.get_next_position()-1
+print(block.ID, 'at', raw.get_next_position()-1)
 
 
 while not block.is_run_trailer:
     raw.get_next_block(block)
     if block.is_control:
-        print block.ID, 'at', raw.get_next_position()-1
+        print(block.ID, 'at', raw.get_next_position()-1)
 
 
 raw.seek_to(2) # right after the EVTH, as you can see in the previous output
@@ -37,4 +37,4 @@ raw.get_next_block(block)
 
 # if in this day and age you do not have a wider monitor...
 numpy.set_printoptions(linewidth=150, precision=4)
-print 'first particle block after first EVTH:\n', block.data.reshape((-1,7))
+print('first particle block after first EVTH:\n', block.data.reshape((-1,7)))
